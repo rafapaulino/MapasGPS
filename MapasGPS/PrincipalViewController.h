@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface PrincipalViewController : UIViewController
+@interface PrincipalViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+
+@property (nonatomic, weak) IBOutlet MKMapView *mapa;
+@property (nonatomic, weak) IBOutlet UISegmentedControl *tipoMapa;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *btnNovoPino;
+
+-(IBAction)ondeEstouClicado:(id)sender;
+-(IBAction)minhaCasaClicado:(id)sender;
+-(IBAction)tipoMapaDeveMudar:(id)sender;
+-(IBAction)novoPino:(id)sender;
 
 @end
